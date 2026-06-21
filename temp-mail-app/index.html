@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TempMail Pro</title>
+
+<meta name="description"
+content="실시간 임시 이메일 및 OTP 수신 서비스">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<div class="app">
+
+<header class="hero">
+
+<div class="logo">
+📧 TempMail Pro
+</div>
+
+<div class="status">
+<span class="dot"></span>
+<span id="statusText">
+Ready
+</span>
+</div>
+
+</header>
+
+<section class="email-card glass">
+
+<div class="card-header">
+
+<h1>Temporary Email</h1>
+
+<p>
+실시간 인증 메일 및 OTP 확인
+</p>
+
+</div>
+
+<div class="email-box">
+
+<input
+type="text"
+id="emailAddress"
+placeholder="새 이메일을 생성하세요"
+readonly>
+
+<button
+id="copyEmailBtn"
+class="primary-btn">
+복사 </button>
+
+</div>
+
+<div class="button-row">
+
+<button
+id="generateBtn"
+class="primary-btn">
+새 이메일 생성 </button>
+
+<button
+id="refreshBtn"
+class="secondary-btn">
+메일 확인 </button>
+
+</div>
+
+<div class="email-info">
+
+<div class="info-item">
+<span class="label">
+도메인
+</span>
+
+<span id="domainLabel">
+-
+</span>
+</div>
+
+<div class="info-item">
+<span class="label">
+받은 메일
+</span>
+
+<span id="mailCount">
+0
+</span>
+</div>
+
+<div class="info-item">
+<span class="label">
+자동 새로고침
+</span>
+
+<span>
+10초
+</span>
+</div>
+
+</div>
+
+</section>
+
+<section class="dashboard">
+
+<div class="mail-panel glass">
+
+<div class="panel-header">
+
+<h2>
+받은 메일함
+</h2>
+
+<span
+class="badge"
+id="messageCounter">
+0 </span>
+
+</div>
+
+<div
+id="mailList"
+class="mail-list">
+
+<div class="empty-state">
+
+<div class="empty-icon">
+📭
+</div>
+
+<p>
+메일이 없습니다
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="viewer-panel glass">
+
+<div class="panel-header">
+
+<h2>
+메일 내용
+</h2>
+
+<button
+id="copyOtpBtn"
+class="secondary-btn">
+OTP 복사 </button>
+
+</div>
+
+<div class="otp-box">
+
+<div class="otp-title">
+감지된 인증번호
+</div>
+
+<div
+id="otpCode"
+class="otp-code">
+------
+</div>
+
+</div>
+
+<div
+id="mailContent"
+class="mail-content">
+
+메일을 선택하세요.
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-card glass">
+
+<div
+class="stat-value"
+id="statEmails">
+0
+</div>
+
+<div class="stat-label">
+수신 메일
+</div>
+
+</div>
+
+<div class="stat-card glass">
+
+<div class="stat-value">
+24H
+</div>
+
+<div class="stat-label">
+임시 유지
+</div>
+
+</div>
+
+<div class="stat-card glass">
+
+<div class="stat-value">
+OTP
+</div>
+
+<div class="stat-label">
+자동 추출
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-text">
+
+TempMail Pro
+
+<span>
+Powered by Mail.tm
+</span>
+
+</div>
+
+</footer>
+
+</div>
+
+<div
+id="toast"
+class="toast">
+완료
+</div>
+
+<div
+id="loader"
+class="loader hidden">
+
+<div class="spinner"></div>
+
+<p>
+불러오는 중...
+</p>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
